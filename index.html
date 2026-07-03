@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Gamer Integrity wiki documentation for downloading, running, building, and reviewing PC-check reports.">
+  <title>Gamer Integrity Documentation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="wrapper">
+    <header class="wiki-topbar">
+      <div class="wiki-topbar-inner">
+        <div class="wiki-brand">
+          <div class="wiki-title">Gamer Integrity Docs</div>
+          <div class="wiki-subtitle">PC Checker Documentation</div>
+        </div>
+        <div class="wiki-search">
+          <input id="siteSearch" type="search" placeholder="Search docs: download, build, report, redaction, scoring..." autocomplete="off">
+          <div id="searchHelp" class="search-help">Search filters visible sections and opens matching documentation.</div>
+        </div>
+        <div class="top-actions">
+          <a class="button button-secondary" href="https://github.com/GamerIntegrity" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="button button-primary" href="#download-use">Download</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="wiki-layout">
+      <aside class="wiki-sidebar" aria-label="Documentation navigation">
+        <div class="wiki-sidebar-title">Contents</div>
+        <nav id="sectionNav">
+          <a href="#overview">Overview</a>
+          <a href="#download-use">Download and use</a>
+          <a href="#what-it-checks">What it checks</a>
+          <a href="#report-guide">Report guide</a>
+          <a href="#reviewer-guide">Reviewer guide</a>
+          <a href="#redacted-reports">Redacted reports</a>
+          <a href="#build-source">Build from source</a>
+          <a href="#project-layout">Project layout</a>
+          <a href="#release-checklist">Release checklist</a>
+          <a href="#limitations">Limitations</a>
+          <a href="#license">License</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+      </aside>
+
+      <main id="main" class="wiki-main">
+        <div id="noResults" class="no-search-results">No visible documentation sections matched the search.</div>
+
+        <section id="overview" class="wiki-section doc-section" data-keywords="overview gamer integrity pc checker anticheat local scan report documentation">
+          <div class="verdict verdict-high hero-card">
+            <div class="metric-label">Gamer Integrity Wiki</div>
+            <div class="verdict-title">PC-check documentation that looks like the report.</div>
+            <div class="verdict-summary">Gamer Integrity is a local Windows report generator for gaming communities, server owners, tournament staff, and reviewers. It helps organize evidence around cheat software, source projects, injector traces, browser download records, and related local artifacts.</div>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#download-use">Download and use</a>
+              <a class="button button-secondary" href="#report-guide">Learn the report</a>
+            </div>
+          </div>
+
+          <div class="grid hero-grid">
+            <div class="card"><div class="metric-label">Platform</div><div class="metric-value">Windows</div><div class="small">Windows 10 / 11</div></div>
+            <div class="card"><div class="metric-label">Scan mode</div><div class="metric-value">Local</div><div class="small">No cloud upload</div></div>
+            <div class="card"><div class="metric-label">Reports</div><div class="metric-value">HTML + JSON</div><div class="small">With manifests</div></div>
+            <div class="card"><div class="metric-label">Author</div><div class="metric-value">DayZeroAnticheat</div><div class="small">Source available</div></div>
+          </div>
+        </section>
+
+        <section id="download-use" class="wiki-section doc-section" data-keywords="download use install run user guide windows smartscreen admin reports">
+          <h2>Download and use</h2>
+          <div class="notice"><strong>Start here:</strong> this is the section for players, admins, and community staff who just want to run a PC check and open the report.</div>
+
+          <div class="grid step-grid">
+            <div class="card"><div class="metric-label">Step 1</div><div class="finding-title">Download the release</div><p>Grab the latest Gamer Integrity release from the project page.</p><a class="inline-action" href="https://github.com/GamerIntegrity" target="_blank" rel="noreferrer">Open GitHub project</a></div>
+            <div class="card"><div class="metric-label">Step 2</div><div class="finding-title">Extract the ZIP</div><p>Put the folder somewhere simple, such as Desktop or Downloads. Keep the files together.</p></div>
+            <div class="card"><div class="metric-label">Step 3</div><div class="finding-title">Run as administrator</div><p>Right-click <code>GamerIntegrity.exe</code> and choose <strong>Run as administrator</strong>. Some checks need elevated access.</p></div>
+            <div class="card"><div class="metric-label">Step 4</div><div class="finding-title">Open the report</div><p>Use <strong>Open Report</strong> for the full report or <strong>Open Redacted Report</strong> when privacy matters.</p></div>
+          </div>
+
+          <div class="notice warning"><strong>Unsigned build warning:</strong> if the release is unsigned, Windows SmartScreen or antivirus prompts may appear. Download only from the official project page.</div>
+        </section>
+
+        <section id="what-it-checks" class="wiki-section doc-section" data-keywords="checks cheat software source build injector mapper browser execution prefetch amcache usb hardware">
+          <h2>What it checks</h2>
+          <div class="grid">
+            <div class="card"><div class="metric-label">Source / builds</div><div class="finding-title">Cheat source and build artifacts</div><p>Looks for names and project structures tied to cheat source code, build outputs, mappers, injectors, spoofers, and cleaners.</p></div>
+            <div class="card"><div class="metric-label">Execution</div><div class="finding-title">Execution traces</div><p>Checks Windows execution artifacts such as Prefetch and AmCache where available.</p></div>
+            <div class="card"><div class="metric-label">Browser</div><div class="finding-title">Downloads and history</div><p>Looks for cheat-related downloads, source URLs, provider domains, and relevant search/history snippets.</p></div>
+            <div class="card"><div class="metric-label">Installed tools</div><div class="finding-title">Tooling context</div><p>Flags configured cheat tools and weak dual-use tools, with lower weighting for tools that are not cheating evidence by themselves.</p></div>
+            <div class="card"><div class="metric-label">System</div><div class="finding-title">Review context</div><p>Captures driver inventory, boot-security posture, hardware identity records, and USB history.</p></div>
+            <div class="card"><div class="metric-label">Sharing</div><div class="finding-title">Redacted output</div><p>Creates a privacy-friendly report that masks usernames, computer names, serials, MACs, USB IDs, and report paths.</p></div>
+          </div>
+        </section>
+
+        <section id="report-guide" class="wiki-section doc-section" data-keywords="report guide html json integrity manifest determination evidence score confidence timeline case summary">
+          <h2>Report guide</h2>
+          <p class="small">The HTML report is the easiest file to review. The JSON file is for machine-readable evidence and deeper review.</p>
+          <table>
+            <thead><tr><th>Section</th><th>What it means</th><th>What to look at</th></tr></thead>
+            <tbody>
+              <tr><td>Determination</td><td>The overall finding level.</td><td>Score, confidence, and basis text.</td></tr>
+              <tr><td>Case Summary</td><td>The short reviewer summary.</td><td>Corroborated chains and review priority.</td></tr>
+              <tr><td>Evidence timeline</td><td>Dated events grouped by day.</td><td>Downloads, execution traces, and timing.</td></tr>
+              <tr><td>Scoring</td><td>How evidence contributed to the result.</td><td>Top factors and category breakdown.</td></tr>
+              <tr><td>Detailed findings</td><td>All findings by category.</td><td>High and Critical items first.</td></tr>
+              <tr><td>Integrity manifest</td><td>SHA-256 hashes for report files.</td><td>Use it to verify reports were not changed.</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="reviewer-guide" class="wiki-section doc-section" data-keywords="reviewer staff admin tournament case summary priority false positive evidence chain">
+          <h2>Reviewer guide</h2>
+          <div class="notice"><strong>Be fair:</strong> do not judge a player from one weak clue. Strong cases usually have multiple evidence types pointing in the same direction.</div>
+          <div class="grid step-grid">
+            <div class="card"><div class="metric-label">01</div><div class="finding-title">Start with Case Summary</div><p>It tells you what matters before the long evidence tables.</p></div>
+            <div class="card"><div class="metric-label">02</div><div class="finding-title">Check the timeline</div><p>Look for downloads followed by extracted projects or injector execution.</p></div>
+            <div class="card"><div class="metric-label">03</div><div class="finding-title">Review direct artifacts</div><p>Source files, build folders, mapper files, and injector traces are higher-signal.</p></div>
+            <div class="card"><div class="metric-label">04</div><div class="finding-title">Keep context</div><p>Dual-use tools alone are not the same as cheat evidence.</p></div>
+          </div>
+        </section>
+
+        <section id="redacted-reports" class="wiki-section doc-section" data-keywords="redacted privacy sharing report user computer hardware mac usb path">
+          <h2>Redacted reports</h2>
+          <div class="notice redaction-banner"><strong>Redacted export:</strong> identity fields, local user paths, hardware serials, MAC addresses, USB serial portions, and report-folder paths are masked for sharing.</div>
+          <div class="grid">
+            <div class="card"><div class="metric-label">Full report</div><div class="metric-value">Internal</div><p>Use this when the reviewer is allowed to see full local paths and identity fields.</p></div>
+            <div class="card"><div class="metric-label">Redacted report</div><div class="metric-value">Shareable</div><p>Use this for appeals, staff review, or public/community documentation.</p></div>
+          </div>
+        </section>
+
+        <section id="build-source" class="wiki-section doc-section" data-keywords="build source visual studio msbuild cpp cli windows sdk release x64 build bat">
+          <h2>Build from source</h2>
+          <p class="small">Use this if you want to compile Gamer Integrity yourself.</p>
+          <details open>
+            <summary>Developer Command Prompt</summary>
+            <div class="command-row"><code>build.bat</code><button class="copy-btn" data-copy="build.bat">Copy</button></div>
+          </details>
+          <p>Or open <code>GamerIntegrity.sln</code> in Visual Studio and build <strong>Release | x64</strong>.</p>
+          <ul class="bullet-list">
+            <li>Visual Studio with Desktop development with C++</li>
+            <li>C++/CLI support</li>
+            <li>Windows 10/11 SDK</li>
+            <li>Release x64 configuration</li>
+          </ul>
+        </section>
+
+        <section id="project-layout" class="wiki-section doc-section" data-keywords="modules project layout scannermodules modelhelpers scoringengine collectors reportwriters runscan">
+          <h2>Project layout</h2>
+          <p class="small">The scanner code is split into simple modules so it is easier to review and maintain.</p>
+          <table>
+            <thead><tr><th>Module</th><th>Purpose</th></tr></thead>
+            <tbody>
+              <tr><td><code>ModelHelpers</code></td><td>Shared data models, formatting helpers, timestamps, hashes, and small utilities.</td></tr>
+              <tr><td><code>ScoringEngine</code></td><td>Score normalization, confidence, category caps, and final determination logic.</td></tr>
+              <tr><td><code>SystemCollectors</code></td><td>Windows compatibility, boot security, drivers, hardware identity, and USB history.</td></tr>
+              <tr><td><code>EvidenceCollectors</code></td><td>File names, browser evidence, execution traces, runtime/startup, and source project grouping.</td></tr>
+              <tr><td><code>ReportWriters</code></td><td>HTML, JSON, redaction, manifests, case summary, and report layout.</td></tr>
+              <tr><td><code>RunScan</code></td><td>Main scan orchestration and progress flow.</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="release-checklist" class="wiki-section doc-section" data-keywords="release checklist testing clean pc cheater scan redacted integrity manifest">
+          <h2>Release checklist</h2>
+          <ul class="bullet-list two-col">
+            <li>Build Release x64</li>
+            <li>Run as administrator</li>
+            <li>Run a known-cheater validation scan</li>
+            <li>Run a clean-PC validation scan</li>
+            <li>Open the full HTML report</li>
+            <li>Open the redacted HTML report</li>
+            <li>Verify JSON report generation</li>
+            <li>Verify integrity manifests</li>
+            <li>Confirm no old version wording</li>
+            <li>Confirm redaction masks identity fields</li>
+          </ul>
+        </section>
+
+        <section id="limitations" class="wiki-section doc-section" data-keywords="limitations false positives amcache prefetch browser history hardware spoofing names only contents">
+          <h2>Known limitations</h2>
+          <div class="notice"><strong>Human review required:</strong> Gamer Integrity is a review tool, not a magic verdict machine. Use it with policy, context, and human review.</div>
+          <ul class="bullet-list">
+            <li>Names-only file scanning does not open or inspect file contents.</li>
+            <li>AmCache may exist but be unreadable from a live OS.</li>
+            <li>Browser-history timestamps may be missing for some records.</li>
+            <li>Hardware spoofing cannot be proven from one scan without a trusted prior baseline.</li>
+            <li>Dual-use tools like debuggers or disassemblers can be legitimate and should not be treated as cheating by themselves.</li>
+          </ul>
+        </section>
+
+        <section id="license" class="wiki-section doc-section" data-keywords="license non commercial no selling source available dayzeroanticheat">
+          <h2>License</h2>
+          <p>Gamer Integrity is source available and non-commercial. You can use it for personal, educational, research, testing, and internal non-commercial review.</p>
+          <div class="notice warning"><strong>No selling:</strong> do not sell, resell, rent, sublicense, monetize, host as a paid service, bundle commercially, or redistribute commercially without written permission from DayZeroAnticheat.</div>
+        </section>
+
+        <section id="faq" class="wiki-section doc-section" data-keywords="faq questions safe privacy upload internet admin unsigned smartscreen">
+          <h2>FAQ</h2>
+          <details open><summary>Does Gamer Integrity upload my files?</summary><p>No. The scan is local and writes reports on the PC.</p></details>
+          <details><summary>Why does it need administrator access?</summary><p>Some Windows evidence areas need elevated access to read properly.</p></details>
+          <details><summary>Does a Critical report automatically prove cheating?</summary><p>It means the scan found strong local evidence. Staff should still review the details and follow their own process.</p></details>
+          <details><summary>Why do I see a SmartScreen warning?</summary><p>If the build is unsigned, Windows may warn on first run. Download only from the official project page.</p></details>
+        </section>
+
+        <div class="footer">Gamer Integrity documentation. Source available, non-commercial. Author: DayZeroAnticheat.</div>
+      </main>
+    </div>
+  </div>
+
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+  <script src="script.js"></script>
+</body>
+</html>

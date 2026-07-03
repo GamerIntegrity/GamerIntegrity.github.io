@@ -1,0 +1,97 @@
+:root {
+  --bg:#f6f8fb; --page:#ffffff; --ink:#1f2933; --muted:#607083; --line:#d9e2ec;
+  --soft:#eef3f8; --soft2:#f8fafc; --link:#1d4ed8; --info:#2563eb; --low:#15803d;
+  --medium:#b45309; --high:#b91c1c; --critical:#7f1d1d; --shadow:0 1px 3px rgba(15,23,42,.08);
+}
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; background:var(--bg); color:var(--ink); font-family:Segoe UI, Arial, sans-serif; line-height:1.5; }
+a { color:var(--link); text-decoration:none; }
+a:hover { text-decoration:underline; }
+code { font-family:Consolas,Cascadia Mono,monospace; font-size:12px; word-break:break-all; background:var(--soft); border:1px solid var(--line); border-radius:4px; padding:1px 4px; }
+p { margin-top:0; }
+.wrapper { max-width:none; margin:0; padding:0; }
+.skip-link { position:absolute; left:-999px; top:8px; z-index:100; background:var(--page); border:1px solid var(--line); border-radius:8px; padding:8px 10px; }
+.skip-link:focus { left:8px; }
+.wiki-topbar { position:sticky; top:0; z-index:20; background:rgba(255,255,255,.96); backdrop-filter:blur(10px); border-bottom:1px solid var(--line); }
+.wiki-topbar-inner { max-width:1440px; margin:0 auto; padding:14px 22px; display:flex; gap:18px; align-items:center; justify-content:space-between; }
+.wiki-brand { min-width:240px; }
+.wiki-title { font-size:20px; font-weight:800; margin:0; }
+.wiki-subtitle { color:var(--muted); font-size:12px; margin-top:2px; }
+.wiki-search { flex:1; max-width:720px; }
+.wiki-search input { width:100%; border:1px solid var(--line); border-radius:8px; padding:11px 12px; font-size:14px; background:var(--soft2); color:var(--ink); }
+.wiki-search input:focus { outline:2px solid rgba(37,99,235,.18); border-color:#93b4e8; background:white; }
+.search-help { color:var(--muted); font-size:12px; margin-top:5px; }
+.top-actions { display:flex; gap:8px; align-items:center; }
+.button { display:inline-flex; align-items:center; justify-content:center; border-radius:8px; padding:10px 13px; font-size:13px; font-weight:750; border:1px solid var(--line); cursor:pointer; white-space:nowrap; }
+.button:hover { text-decoration:none; }
+.button-primary { background:var(--info); border-color:var(--info); color:white; }
+.button-secondary { background:var(--page); color:var(--ink); }
+.button-secondary:hover { background:var(--soft); }
+.wiki-layout { max-width:1440px; margin:0 auto; display:grid; grid-template-columns:260px minmax(0,1fr); gap:22px; padding:22px; }
+.wiki-sidebar { position:sticky; top:90px; margin-top:0; align-self:start; background:var(--page); border:1px solid var(--line); border-radius:8px; box-shadow:var(--shadow); padding:12px; max-height:calc(100vh - 124px); overflow:auto; }
+.wiki-sidebar-title { font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.08em; margin:2px 4px 8px; }
+.wiki-sidebar a { display:block; padding:7px 8px; border-radius:6px; color:var(--ink); font-size:13px; }
+.wiki-sidebar a:hover, .wiki-sidebar a.active { background:var(--soft); text-decoration:none; }
+.wiki-main { min-width:0; }
+section { margin-top:18px; scroll-margin-top:96px; }
+section:first-of-type { margin-top:0; }
+section h2 { margin:0 0 10px; font-size:22px; padding-bottom:6px; border-bottom:1px solid var(--line); }
+.grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; margin-top:14px; }
+.card { background:var(--page); border:1px solid var(--line); border-radius:8px; padding:14px; box-shadow:var(--shadow); }
+.metric-label { color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacing:.06em; }
+.metric-value { font-size:21px; font-weight:750; margin-top:4px; }
+.small { font-size:12px; color:var(--muted); }
+.mono { font-family:Consolas,Cascadia Mono,monospace; font-size:12px; word-break:break-all; }
+.badge { display:inline-flex; align-items:center; border-radius:4px; padding:3px 7px; color:white; font-size:12px; font-weight:700; white-space:nowrap; }
+.concern-clean,.concern-low { background:var(--low); } .concern-medium { background:var(--medium); } .concern-high { background:var(--high); } .concern-critical { background:var(--critical); }
+.sev-info { background:var(--info); } .sev-low { background:var(--low); } .sev-medium { background:var(--medium); } .sev-high { background:var(--high); } .sev-critical { background:var(--critical); }
+.notice { border:1px solid var(--line); border-left:4px solid var(--info); background:var(--page); padding:13px 15px; border-radius:8px; color:#243447; box-shadow:var(--shadow); }
+.notice.warning { border-left-color:var(--medium); background:#fff7ed; margin-top:14px; }
+.redaction-banner { border-left-color:var(--medium); background:#fff7ed; margin-bottom:18px; }
+.verdict { background:var(--page); border:1px solid var(--line); border-left:6px solid #64748b; border-radius:8px; padding:18px; box-shadow:var(--shadow); }
+.verdict-clean,.verdict-low { border-left-color:var(--low); } .verdict-medium { border-left-color:var(--medium); } .verdict-high { border-left-color:var(--high); } .verdict-critical { border-left-color:var(--critical); }
+.verdict-title { font-size:32px; line-height:1.1; font-weight:850; margin-top:4px; max-width:900px; }
+.verdict-summary { margin-top:7px; color:#334155; max-width:980px; }
+.hero-card { padding:24px; }
+.hero-actions { display:flex; gap:10px; flex-wrap:wrap; margin-top:16px; }
+.hero-grid { margin-top:18px; }
+.step-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+.finding-title { font-weight:700; margin-bottom:4px; }
+.finding-details { color:#334155; white-space:pre-wrap; word-break:break-word; }
+.inline-action { display:inline-flex; margin-top:5px; font-weight:750; }
+table { width:100%; border-collapse:collapse; background:var(--page); border:1px solid var(--line); border-radius:8px; overflow:hidden; box-shadow:var(--shadow); margin-top:10px; }
+th,td { border-bottom:1px solid var(--line); padding:9px 10px; text-align:left; vertical-align:top; }
+th { color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacing:.05em; background:var(--soft2); }
+tr:last-child td { border-bottom:none; }
+details { background:var(--page); border:1px solid var(--line); border-radius:8px; padding:12px 14px; margin-top:10px; box-shadow:var(--shadow); }
+details details { box-shadow:none; margin:10px 0 0; background:var(--soft2); }
+summary { cursor:pointer; font-weight:750; }
+.command-row { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:12px; background:var(--soft2); border:1px solid var(--line); border-radius:8px; padding:10px; }
+.copy-btn { border:1px solid var(--line); background:var(--page); color:var(--ink); border-radius:6px; padding:6px 9px; cursor:pointer; font-weight:750; }
+.copy-btn:hover { background:var(--soft); }
+.bullet-list { padding-left:20px; color:#334155; }
+.bullet-list li { margin:6px 0; }
+.two-col { columns:2; }
+.doc-section.search-hidden { display:none !important; }
+.no-search-results { display:none; background:#fff; border:1px dashed var(--line); border-radius:8px; padding:16px; color:var(--muted); margin-top:12px; }
+body.searching .no-search-results.show { display:block; }
+.footer { margin-top:24px; color:var(--muted); font-size:12px; border-top:1px solid var(--line); padding-top:12px; }
+.back-to-top { position:fixed; right:18px; bottom:18px; width:42px; height:42px; border-radius:50%; border:1px solid var(--line); background:var(--page); color:var(--ink); box-shadow:var(--shadow); cursor:pointer; opacity:0; transform:translateY(8px); transition:.18s ease; }
+.back-to-top.visible { opacity:1; transform:translateY(0); }
+@media (max-width:1050px) {
+  .wiki-layout { grid-template-columns:1fr; }
+  .wiki-sidebar { position:relative; top:0; margin-top:0; max-height:none; }
+  .grid, .step-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .wiki-topbar-inner { align-items:flex-start; flex-wrap:wrap; }
+  .wiki-search { order:3; max-width:none; flex-basis:100%; }
+}
+@media (max-width:650px) {
+  .wiki-topbar-inner { display:block; }
+  .wiki-search { margin-top:10px; }
+  .top-actions { margin-top:10px; }
+  .grid, .step-grid { grid-template-columns:1fr; }
+  table { display:block; overflow-x:auto; }
+  .two-col { columns:1; }
+  .verdict-title { font-size:26px; }
+}
