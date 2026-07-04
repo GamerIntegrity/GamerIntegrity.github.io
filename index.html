@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="GamerIntegrity documentation for players, admins, and community staff. Download, scan, export reports, build from source, and understand detections.">
-  <title>GamerIntegrity Wiki</title>
+  <meta name="description" content="GamerIntegrity is a non-gate kept Windows PC checker for gamers, server owners, Discord staff, and community admins.">
+  <title>GamerIntegrity</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -15,12 +15,11 @@
       <div class="wiki-topbar-inner">
         <a class="wiki-brand" href="#overview" aria-label="GamerIntegrity home">
           <div class="wiki-title">GamerIntegrity</div>
-          <div class="wiki-subtitle">PC check wiki · v1.0.0</div>
+          <div class="wiki-subtitle">Non-gate kept pc checker for all gamers.</div>
         </a>
 
         <div class="wiki-search" role="search">
-          <input id="siteSearch" type="search" placeholder="Search the wiki: download, admin, redacted, detections, build..." autocomplete="off" aria-label="Search documentation">
-          <div id="searchHelp" class="search-help">Search filters the page and opens matching answers.</div>
+          <input id="siteSearch" type="search" placeholder="Search: download, admin, redacted, detections, build..." autocomplete="off" aria-label="Search GamerIntegrity page">
         </div>
 
         <div class="top-actions">
@@ -31,7 +30,7 @@
     </header>
 
     <div class="wiki-layout">
-      <aside class="wiki-sidebar" aria-label="Documentation navigation">
+      <aside class="wiki-sidebar" aria-label="Page navigation">
         <div class="wiki-sidebar-title">Table of Contents</div>
         <nav id="sectionNav">
           <a href="#overview">Overview</a>
@@ -40,10 +39,10 @@
           <a href="#detections">Detections</a>
           <a href="#results-guide">Results guide</a>
           <a href="#redacted-reports">Redacted vs Non-Redacted</a>
-          <a href="#fair-review">Fair review</a>
+          <a href="#fair-review">Fair calls</a>
           <a href="#build-source">Build from source</a>
-          <a href="#project-layout">Project layout</a>
-          <a href="#release-checklist">Release checklist</a>
+          <a href="#project-layout">Source layout</a>
+          <a href="#release-checklist">Release checks</a>
           <a href="#limits">Known limits</a>
           <a href="#license">License</a>
           <a href="#faq">FAQ</a>
@@ -51,17 +50,17 @@
       </aside>
 
       <main id="main" class="wiki-main">
-        <div id="noResults" class="no-search-results">No visible wiki sections matched the search.</div>
+        <div id="noResults" class="no-search-results">No sections matched your search.</div>
 
-        <section id="overview" class="wiki-section doc-section" data-keywords="overview gamerintegrity gamer integrity pc check anticheat dayzero local scan report documentation">
+        <section id="overview" class="wiki-section doc-section" data-keywords="overview gamerintegrity gamer integrity pc check anticheat dayzero local scan report gamer player admin">
           <div class="verdict verdict-high hero-card">
-            <div class="metric-label">GamerIntegrity Wiki</div>
-            <div class="verdict-title">A local PC check tool for gaming communities.</div>
-            <div class="verdict-summary">GamerIntegrity helps players, server owners, tournament staff, and anti-cheat reviewers scan a Windows PC for cheat-related traces, organize what was found, and choose a safe report view before anything is exported.</div>
+            <div class="metric-label">GamerIntegrity</div>
+            <div class="verdict-title">A non-gate kept PC checker for all gamers.</div>
+            <div class="verdict-summary">GamerIntegrity helps players, server owners, Discord staff, and community admins check a Windows PC for cheat-related traces, understand what was found, and choose a safe view before anything is exported.</div>
             <div class="hero-actions">
               <a class="button button-primary" href="https://github.com/GamerIntegrity/gamerintegrity/releases/latest" target="_blank" rel="noreferrer">Download latest release</a>
               <a class="button button-secondary" href="#download-use">How to run it</a>
-              <a class="button button-secondary" href="#results-guide">Read the results</a>
+              <a class="button button-secondary" href="#results-guide">Understand results</a>
             </div>
           </div>
 
@@ -80,8 +79,8 @@
           <div class="notice"><strong>Start here:</strong> this is the player/admin path for downloading GamerIntegrity and running a scan.</div>
 
           <div class="grid step-grid">
-            <div class="card"><div class="metric-label">Step 1</div><div class="finding-title">Download the release</div><p>Use the official releases page. Do not trust random mirrors, reuploads, or edited copies.</p><a class="inline-action" href="https://github.com/GamerIntegrity/gamerintegrity/releases/latest" target="_blank" rel="noreferrer">Open latest release</a></div>
-            <div class="card"><div class="metric-label">Step 2</div><div class="finding-title">Extract the ZIP</div><p>Put it somewhere easy to find, like Desktop or Downloads. Keep the files together in the same folder.</p></div>
+            <div class="card"><div class="metric-label">Step 1</div><div class="finding-title">Download the right EXE</div><p>Use the official releases page and pick the build for your PC. Do not trust random mirrors, reuploads, or edited copies.</p><a class="inline-action" href="https://github.com/GamerIntegrity/gamerintegrity/releases/latest" target="_blank" rel="noreferrer">Open latest release</a></div>
+            <div class="card"><div class="metric-label">Step 2</div><div class="finding-title">Keep it official</div><p>Put the EXE somewhere easy to find, like Desktop or Downloads. Use the release from the official repo.</p></div>
             <div class="card"><div class="metric-label">Step 3</div><div class="finding-title">Run the app</div><p>Open <code>GamerIntegrity.exe</code>. If it is not elevated, the app shows a clean <strong>Restart as Admin</strong> button.</p></div>
             <div class="card"><div class="metric-label">Step 4</div><div class="finding-title">Pick your report view</div><p>After the scan, choose <strong>Redacted</strong> for sharing or <strong>Non-Redacted</strong> for the full local view.</p></div>
           </div>
@@ -92,9 +91,9 @@
         <section id="scan-flow" class="wiki-section doc-section" data-keywords="scan flow wpf results load in app export redacted non redacted no browser closed">
           <h2>How scanning works</h2>
           <div class="grid step-grid">
-            <div class="card"><div class="metric-label">01</div><div class="finding-title">Scan starts</div><p>The app runs local checks and shows a live timeline while it works.</p></div>
+            <div class="card"><div class="metric-label">01</div><div class="finding-title">Scan starts</div><p>The app runs local checks and shows a live scan log while it works.</p></div>
             <div class="card"><div class="metric-label">02</div><div class="finding-title">Results load in GamerIntegrity</div><p>The browser stays closed. Results fade into the app first so staff can choose what to view.</p></div>
-            <div class="card"><div class="metric-label">03</div><div class="finding-title">Choose Redacted or Non-Redacted</div><p>Redacted hides private identity fields. Non-Redacted keeps full local paths and identifiers for trusted review.</p></div>
+            <div class="card"><div class="metric-label">03</div><div class="finding-title">Choose Redacted or Non-Redacted</div><p>Redacted hides private identity fields. Non-Redacted keeps full local paths and identifiers for a trusted local staff check.</p></div>
             <div class="card"><div class="metric-label">04</div><div class="finding-title">Export only when needed</div><p>Report files are created only when the user chooses to export them.</p></div>
           </div>
         </section>
@@ -117,16 +116,16 @@
 
         <section id="results-guide" class="wiki-section doc-section" data-keywords="results guide overview concern score confidence timeline categories pages pagination detections report">
           <h2>Results guide</h2>
-          <p class="small">The in-app report is built for quick review first, with exports available only after a view is selected.</p>
+          <p class="small">The in-app report is built for a quick first look, with exports available only after a view is selected.</p>
           <table>
             <thead><tr><th>Area</th><th>What it means</th><th>How to use it</th></tr></thead>
             <tbody>
               <tr><td>Overview</td><td>The top summary of the scan.</td><td>Start here to understand the overall level and short basis.</td></tr>
-              <tr><td>Stats</td><td>Counts and high-level scan metrics.</td><td>Use them as context, not as the only decision point.</td></tr>
+              <tr><td>Stat cards</td><td>Counts and high-level scan numbers.</td><td>Use them as context, not as the only decision point.</td></tr>
               <tr><td>Detections</td><td>Grouped flags and traces.</td><td>Open each category to see what was found. Categories are collapsed by default.</td></tr>
               <tr><td>Timeline</td><td>Important dated scan events.</td><td>Look for chains such as download → extract → run.</td></tr>
-              <tr><td>Pagination</td><td>Large result groups are paged.</td><td>Review every page when a category has many hits.</td></tr>
-              <tr><td>Export</td><td>Creates report files only after the user chooses.</td><td>Export Redacted for sharing; export Non-Redacted only for trusted local review.</td></tr>
+              <tr><td>Pagination</td><td>Large result groups are paged.</td><td>Check every page when a category has many hits.</td></tr>
+              <tr><td>Export</td><td>Creates report files only after the user chooses.</td><td>Export Redacted for sharing; export Non-Redacted only for a trusted local check.</td></tr>
             </tbody>
           </table>
         </section>
@@ -135,19 +134,19 @@
           <h2>Redacted vs Non-Redacted</h2>
           <div class="notice redaction-banner"><strong>Redacted is the safer sharing view.</strong> It masks identity fields, local usernames, computer names, report paths, MAC addresses, serial-like values, and USB serial portions where supported.</div>
           <div class="grid two-card-grid">
-            <div class="card"><div class="metric-label">Redacted</div><div class="metric-value">Safe view</div><p>Use this for Discord staff rooms, appeals, tickets, community review, or any place where private machine details should not be exposed.</p></div>
-            <div class="card"><div class="metric-label">Non-Redacted</div><div class="metric-value">Full local view</div><p>Use this only when a trusted reviewer is allowed to see full paths, identifiers, and machine-specific details.</p></div>
+            <div class="card"><div class="metric-label">Redacted</div><div class="metric-value">Safe view</div><p>Use this for Discord staff rooms, appeals, tickets, or anywhere private machine details should not be exposed.</p></div>
+            <div class="card"><div class="metric-label">Non-Redacted</div><div class="metric-value">Full local view</div><p>Use this only when trusted staff are allowed to see full paths, identifiers, and machine-specific details.</p></div>
           </div>
         </section>
 
-        <section id="fair-review" class="wiki-section doc-section" data-keywords="fair review staff admin false positive evidence chain player appeal ban verdict concern critical high medium low">
-          <h2>Fair review</h2>
+        <section id="fair-review" class="wiki-section doc-section" data-keywords="fair check staff admin false positive evidence chain player appeal ban verdict concern critical high medium low">
+          <h2>Fair calls</h2>
           <div class="notice"><strong>Do not treat one weak clue as a ban button.</strong> Strong cases usually have multiple traces pointing the same way, especially when timing lines up.</div>
           <div class="grid step-grid">
             <div class="card"><div class="metric-label">01</div><div class="finding-title">Start with Overview</div><p>Read the level and basis before opening every category.</p></div>
             <div class="card"><div class="metric-label">02</div><div class="finding-title">Check the timeline</div><p>Look for related activity that happened around the same time.</p></div>
-            <div class="card"><div class="metric-label">03</div><div class="finding-title">Prioritize direct traces</div><p>Projects, builds, launch artifacts, and downloaded cheat files matter more than weak keyword matches.</p></div>
-            <div class="card"><div class="metric-label">04</div><div class="finding-title">Keep context</div><p>Debuggers, disassemblers, or dev tools can be legitimate. They need surrounding context.</p></div>
+            <div class="card"><div class="metric-label">03</div><div class="finding-title">Prioritize stronger traces</div><p>Projects, builds, launch artifacts, and downloaded cheat files matter more than weak keyword matches.</p></div>
+            <div class="card"><div class="metric-label">04</div><div class="finding-title">Keep context</div><p>Debuggers, disassemblers, and dev tools can be legitimate. Check the surrounding context.</p></div>
           </div>
         </section>
 
@@ -174,7 +173,7 @@
         </section>
 
         <section id="project-layout" class="wiki-section doc-section" data-keywords="project layout mainwindow scanner service report writer rules models helpers wpf xaml theme">
-          <h2>Project layout</h2>
+          <h2>Source layout</h2>
           <p class="small">The app keeps the WPF interface separate from scan logic and report generation.</p>
           <table>
             <thead><tr><th>File / area</th><th>Purpose</th></tr></thead>
@@ -192,7 +191,7 @@
         </section>
 
         <section id="release-checklist" class="wiki-section doc-section" data-keywords="release checklist testing clean pc cheater validation redacted non redacted export build smoke test">
-          <h2>Release checklist</h2>
+          <h2>Release checks</h2>
           <ul class="bullet-list two-col">
             <li>Build Release x64.</li>
             <li>Run the app without admin and verify the Restart as Admin page.</li>
@@ -211,22 +210,22 @@
 
         <section id="limits" class="wiki-section doc-section" data-keywords="limitations false positives amcache prefetch browser history hardware spoofing dual use context">
           <h2>Known limits</h2>
-          <div class="notice"><strong>Human review required:</strong> GamerIntegrity organizes local traces. It does not replace staff policy, appeal process, or human judgment.</div>
+          <div class="notice"><strong>Human call required:</strong> GamerIntegrity organizes local traces. It does not replace server rules, appeal process, or a real staff call.</div>
           <ul class="bullet-list">
             <li>Names-only file scanning does not prove file contents.</li>
             <li>Some Windows artifacts may be disabled, missing, cleaned, or unreadable from a live OS.</li>
             <li>Browser history can be incomplete or have misleading timestamps.</li>
             <li>Hardware spoofing cannot be proven from one scan without a trusted baseline.</li>
-            <li>Dual-use tools can be legitimate and should be reviewed with context.</li>
-            <li>A high or critical result should start a careful review, not end the conversation by itself.</li>
+            <li>Dual-use tools can be legitimate and should be checked with context.</li>
+            <li>A High or Critical result should start a careful check, not end the conversation by itself.</li>
           </ul>
         </section>
 
         <section id="license" class="wiki-section doc-section" data-keywords="license non commercial no selling no resale all rights reserved dayzero anticheat">
           <h2>License</h2>
-          <p>GamerIntegrity is source-available for personal, educational, research, testing, and internal non-commercial review unless the repository license says otherwise.</p>
+          <p>GamerIntegrity is source-available for personal, educational, testing, and community non-commercial use unless the repository license says otherwise.</p>
           <div class="notice warning"><strong>No selling or resale:</strong> do not sell, resell, rent, sublicense, monetize, host as a paid service, bundle commercially, or redistribute commercially without written permission from DayZero Anticheat.</div>
-          <p class="small">The license file in the repository controls the exact legal terms. This page is a plain-English summary for users.</p>
+          <p class="small">The license file in the repository controls the exact legal terms. This page is a plain-English summary for gamers and community admins.</p>
         </section>
 
         <section id="faq" class="wiki-section doc-section" data-keywords="faq questions safe upload privacy admin uac smartscreen false positive redacted export browser internet appeal ban">
@@ -234,12 +233,12 @@
           <details><summary>Does GamerIntegrity upload my files?</summary><p>No. GamerIntegrity is designed to scan locally. Sharing only happens if you export a report and send it somewhere yourself.</p></details>
           <details><summary>Why does it need administrator access?</summary><p>Some Windows evidence areas require elevated access. If the app is not launched as admin, it shows a Restart as Admin button.</p></details>
           <details><summary>Does the browser open after the scan?</summary><p>No. Results load inside GamerIntegrity first. Exported files are only created when you choose to export them.</p></details>
-          <details><summary>Which view should I share?</summary><p>Use Redacted for sharing. Use Non-Redacted only for trusted local review where full paths and identifiers are allowed.</p></details>
-          <details><summary>Does a Critical result automatically prove cheating?</summary><p>No. It means strong local traces were found. Staff should review the categories, timeline, and context before making a decision.</p></details>
+          <details><summary>Which view should I share?</summary><p>Use Redacted for sharing. Use Non-Redacted only for a trusted local check where full paths and identifiers are allowed.</p></details>
+          <details><summary>Does a Critical result automatically prove cheating?</summary><p>No. It means strong local traces were found. Staff should check the categories, timeline, and context before making a decision.</p></details>
           <details><summary>Can legit developer tools be flagged?</summary><p>Some tools are dual-use. Debuggers, disassemblers, and similar apps should be treated as context unless paired with stronger cheat-specific traces.</p></details>
           <details><summary>Why do I see a SmartScreen warning?</summary><p>Unsigned or new Windows apps can trigger SmartScreen. Download only from the official repository and verify the release source.</p></details>
-          <details><summary>Can a player appeal a result?</summary><p>That depends on the community or tournament rules. GamerIntegrity gives staff organized data; it does not decide policy.</p></details>
-          <details><summary>Can someone delete traces before scanning?</summary><p>It is possible for traces to be missing, cleaned, or unavailable. That is why staff should review the full context and not rely on one field.</p></details>
+          <details><summary>Can a player appeal a result?</summary><p>That depends on the community or tournament rules. GamerIntegrity gives staff organized data; it does not decide server policy.</p></details>
+          <details><summary>Can someone delete traces before scanning?</summary><p>It is possible for traces to be missing, cleaned, or unavailable. That is why staff should check the full context and not rely on one field.</p></details>
           <details><summary>Where do I report bugs or request features?</summary><p>Use the official GitHub repository issue tracker so the report can be tracked and fixed in the source.</p></details>
         </section>
 

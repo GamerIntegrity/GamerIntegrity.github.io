@@ -34,7 +34,6 @@ p { margin-top:0; }
 .wiki-search { flex:1; max-width:760px; }
 .wiki-search input { width:100%; border:1px solid var(--line); border-radius:9px; padding:11px 12px; font-size:14px; background:var(--soft2); color:var(--ink); }
 .wiki-search input:focus { outline:3px solid rgba(37,99,235,.14); border-color:#93b4e8; background:white; }
-.search-help { color:var(--muted); font-size:12px; margin-top:5px; }
 .top-actions { display:flex; gap:8px; align-items:center; }
 .button { display:inline-flex; align-items:center; justify-content:center; border-radius:8px; padding:10px 13px; font-size:13px; font-weight:780; border:1px solid var(--line); cursor:pointer; white-space:nowrap; transition:background .15s ease, border-color .15s ease, transform .15s ease; }
 .button:hover { text-decoration:none; transform:translateY(-1px); }
@@ -43,7 +42,7 @@ p { margin-top:0; }
 .button-secondary { background:var(--page); color:var(--ink); }
 .button-secondary:hover { background:var(--soft); }
 .wiki-layout { max-width:1440px; margin:0 auto; display:grid; grid-template-columns:270px minmax(0,1fr); gap:22px; padding:22px; }
-.wiki-sidebar { position:sticky; top:90px; margin-top:0; align-self:start; background:var(--page); border:1px solid var(--line); border-radius:10px; box-shadow:var(--shadow); padding:12px; max-height:calc(100vh - 124px); overflow:auto; scrollbar-width:thin; scrollbar-color:#b8c4d3 transparent; }
+.wiki-sidebar { position:sticky; top:90px; margin-top:0; align-self:start; background:var(--page); border:1px solid var(--line); border-radius:10px; box-shadow:var(--shadow); padding:13px; max-height:calc(100vh - 124px); overflow:auto; scrollbar-width:thin; scrollbar-color:#b8c4d3 transparent; }
 .wiki-sidebar::-webkit-scrollbar { width:10px; }
 .wiki-sidebar::-webkit-scrollbar-thumb { background:#b8c4d3; border:3px solid var(--page); border-radius:999px; }
 .wiki-sidebar-title { font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.08em; margin:2px 4px 8px; }
@@ -54,7 +53,7 @@ section { margin-top:18px; scroll-margin-top:96px; }
 section:first-of-type { margin-top:0; }
 section h2 { margin:0 0 10px; font-size:22px; padding-bottom:6px; border-bottom:1px solid var(--line); letter-spacing:-.01em; }
 .grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; margin-top:14px; }
-.card { background:var(--page); border:1px solid var(--line); border-radius:10px; padding:15px; box-shadow:var(--shadow); }
+.card { background:var(--page); border:1px solid var(--line); border-radius:12px; padding:16px; box-shadow:var(--shadow); }
 .card:hover { border-color:#c5d2e0; }
 .stat-card { position:relative; padding-top:18px; box-shadow:var(--shadow-strong); }
 .stat-card::before { content:""; position:absolute; top:0; left:16px; right:16px; height:3px; background:var(--info); border-radius:0 0 999px 999px; }
@@ -69,7 +68,7 @@ section h2 { margin:0 0 10px; font-size:22px; padding-bottom:6px; border-bottom:
 .notice.warning { border-left-color:var(--medium); background:#fff7ed; margin-top:14px; }
 .notice.rights { margin-top:16px; }
 .redaction-banner { border-left-color:var(--medium); background:#fff7ed; margin-bottom:18px; }
-.verdict { background:var(--page); border:1px solid var(--line); border-left:6px solid #64748b; border-radius:10px; padding:18px; box-shadow:var(--shadow); }
+.verdict { background:var(--page); border:1px solid var(--line); border-left:6px solid #64748b; border-radius:12px; padding:19px; box-shadow:var(--shadow); }
 .verdict-clean,.verdict-low { border-left-color:var(--low); } .verdict-medium { border-left-color:var(--medium); } .verdict-high { border-left-color:var(--high); } .verdict-critical { border-left-color:var(--critical); }
 .verdict-title { font-size:34px; line-height:1.08; font-weight:880; margin-top:4px; max-width:980px; letter-spacing:-.03em; }
 .verdict-summary { margin-top:9px; color:#334155; max-width:1020px; font-size:16px; }
