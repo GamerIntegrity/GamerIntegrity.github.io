@@ -71,7 +71,7 @@ section h2 { margin:0 0 10px; font-size:22px; padding-bottom:6px; border-bottom:
 .notice.rights { margin-top:16px; }
 .coffee-card { display:flex; align-items:center; justify-content:space-between; gap:18px; background:var(--page); border:1px solid #d8b800; border-left:5px solid #ffdd00; border-radius:12px; padding:18px; box-shadow:var(--shadow-strong); }
 .coffee-card p { margin:6px 0 0; color:#334155; }
-.bmc-widget { position:sticky; bottom:10px; margin:14px 4px 0; z-index:5; display:flex; align-items:center; justify-content:center; gap:8px; border:1px solid #d8b800; background:#ffdd00; color:#1f2933; border-radius:999px; padding:11px 14px; font-size:13px; font-weight:800; box-shadow:var(--shadow-strong); transition:transform .15s ease, background .15s ease; }
+.bmc-widget { position:sticky; bottom:10px; margin:14px 4px 6px; z-index:5; display:flex; align-items:center; justify-content:center; gap:8px; border:1px solid #d8b800; background:#ffdd00; color:#1f2933; border-radius:999px; padding:11px 14px; font-size:13px; font-weight:800; box-shadow:var(--shadow-strong); transition:transform .15s ease, background .15s ease; }
 .bmc-widget:hover { text-decoration:none; transform:translateY(-1px); background:#fff4a3; }
 .bmc-cup { font-size:16px; line-height:1; }
 .redaction-banner { border-left-color:var(--medium); background:#fff7ed; margin-bottom:18px; }
