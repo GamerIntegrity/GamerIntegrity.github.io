@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>GamerIntegrity | Free Offline PC Checker for Gamers</title>
-  <meta name="description" content="GamerIntegrity is a non-gate kept Windows PC checker for gamers and communities. Offline only scans, clearer trace wording, redacted sharing, and no accounts.">
+  <meta name="description" content="GamerIntegrity is a non-gate kept Windows PC checker for gamers and communities. Offline scans, searchable wiki-style reports, cleaner cheat evidence, redacted sharing, and no accounts.">
   <meta name="keywords" content="GamerIntegrity, PC checker, gamer PC checker, game integrity checker, anti cheat tool, cheat detection, redacted report, server staff, Discord staff, tournament admin, DayZero Anticheat">
   <meta name="author" content="DayZero Anticheat">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -15,13 +15,13 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="GamerIntegrity">
   <meta property="og:title" content="GamerIntegrity | Free Offline PC Checker for Gamers">
-  <meta property="og:description" content="A non-gate kept Windows PC checker for gamers and communities. Offline only scans, clearer trace wording, redacted sharing, and no accounts.">
+  <meta property="og:description" content="A non-gate kept Windows PC checker for gamers and communities. Offline scans, searchable reports, clearer cheat evidence, redacted sharing, and no accounts.">
   <meta property="og:url" content="https://gamerintegrity.github.io/">
   <meta property="og:locale" content="en_US">
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="GamerIntegrity | Free Offline PC Checker for Gamers">
-  <meta name="twitter:description" content="Offline only Windows PC checks for gamers, server owners, Discord staff, and tournaments.">
+  <meta name="twitter:description" content="Offline Windows PC checks with searchable reports, cleaner evidence, redacted sharing, and integrity files.">
 
   <script type="application/ld+json">
   {
@@ -30,8 +30,8 @@
     "name": "GamerIntegrity",
     "applicationCategory": "SecurityApplication",
     "operatingSystem": "Windows 10, Windows 11",
-    "description": "GamerIntegrity is a non-gate kept Windows PC checker for gamers and communities. Scans run offline, results are shown in the app, and sharing is controlled by the user.",
-    "softwareVersion": "1.0.2",
+    "description": "GamerIntegrity is a non-gate kept Windows PC checker for gamers and communities. Scans run offline, results are shown in the app, reports are searchable, and sharing is controlled by the user.",
+    "softwareVersion": "1.0.4",
     "author": {
       "@type": "Organization",
       "name": "DayZero Anticheat"
@@ -60,7 +60,7 @@
         </a>
 
         <div class="wiki-search" role="search">
-          <input id="siteSearch" type="search" placeholder="Search: download, redacted, detections, privacy, FAQ..." autocomplete="off" aria-label="Search GamerIntegrity page">
+          <input id="siteSearch" type="search" placeholder="Search: download, reports, integrity, detections, privacy, FAQ..." autocomplete="off" aria-label="Search GamerIntegrity page">
         </div>
 
         <div class="top-actions">
@@ -77,10 +77,12 @@
           <a href="#overview">Overview</a>
           <a href="#download">Download</a>
           <a href="#how-it-works">How it works</a>
+          <a href="#whats-new">v1.0.4 update</a>
           <a href="#offline-only">Offline only trust</a>
           <a href="#what-it-checks">What it checks</a>
           <a href="#cheat-types">Cheat types</a>
           <a href="#redacted">Redacted vs Non-Redacted</a>
+          <a href="#report-files">Report files</a>
           <a href="#fair-play">Fair play</a>
           <a href="#open-source">Open source</a>
           <a href="#limits">Good to know</a>
@@ -100,23 +102,23 @@
           <div class="verdict verdict-high hero-card">
             <div class="metric-label">GamerIntegrity</div>
             <div class="verdict-title">A PC checker made for gamers, servers, and tournaments.</div>
-            <div class="verdict-summary">Run an offline check, read the results in the app, and share a redacted report only when you choose to. No account gate. No forced upload. No browser report popping open after every scan.</div>
+            <div class="verdict-summary">Run an offline check, review a searchable wiki-style report, and share a redacted report only when you choose to. No account gate. No forced upload. No browser report popping open after every scan.</div>
             <div class="hero-actions">
               <a class="button button-primary" href="https://github.com/GamerIntegrity/gamerintegrity/releases/latest" target="_blank" rel="noreferrer">Download latest release</a>
-              <a class="button button-secondary" href="#cheat-types">See cheat types</a>
+              <a class="button button-secondary" href="#whats-new">What's new</a>
               <a class="button button-secondary" href="#offline-only">Why players can trust it</a>
             </div>
           </div>
         </section>
 
-        <section id="download" class="wiki-section doc-section" data-keywords="download release exe windows x64 x86 arm64 github latest install run">
+        <section id="download" class="wiki-section doc-section" data-keywords="download release exe windows x64 x86 arm64 github latest install run html json integrity redacted non redacted">
           <h2>Download</h2>
           <div class="notice"><strong>Most players should download:</strong> <code>GamerIntegrity-win-x64.exe</code></div>
           <div class="grid step-grid">
             <div class="card"><div class="metric-label">1</div><div class="finding-title">Download from GitHub</div><p>Use the official release page. Do not trust random reuploads.</p><a class="inline-action" href="https://github.com/GamerIntegrity/gamerintegrity/releases/latest" target="_blank" rel="noreferrer">Open latest release</a></div>
             <div class="card"><div class="metric-label">2</div><div class="finding-title">Most PCs use x64</div><p>Grab <strong>GamerIntegrity-win-x64.exe</strong> unless you know you need x86 or ARM64.</p></div>
             <div class="card"><div class="metric-label">3</div><div class="finding-title">Run the app</div><p>If it asks for admin, click Restart as Admin so it can check the right Windows traces.</p></div>
-            <div class="card"><div class="metric-label">4</div><div class="finding-title">Choose what to share</div><p>Use Redacted for sharing. Use Non-Redacted only for trusted local checks.</p></div>
+            <div class="card"><div class="metric-label">4</div><div class="finding-title">Export and share safely</div><p>Use Redacted for sharing. Keep the HTML, JSON, and integrity file together when a report needs to be reviewed or preserved.</p></div>
           </div>
           <div class="notice warning"><strong>Windows warning note:</strong> new unsigned community tools can trigger SmartScreen. Make sure the file came from the official repo before running it.</div>
         </section>
@@ -124,10 +126,23 @@
         <section id="how-it-works" class="wiki-section doc-section" data-keywords="how it works scan results in app redacted non redacted export no browser">
           <h2>How it works</h2>
           <div class="grid step-grid">
-            <div class="card"><div class="metric-label">01</div><div class="finding-title">Run scan</div><p>The app checks local Windows traces on the PC, including newer retained activity areas in v1.0.2.</p></div>
-            <div class="card"><div class="metric-label">02</div><div class="finding-title">Read results</div><p>Results load inside GamerIntegrity first.</p></div>
+            <div class="card"><div class="metric-label">01</div><div class="finding-title">Run scan</div><p>The app checks local Windows, browser, launch, download, source/build, startup, USB, and hardware context on the PC.</p></div>
+            <div class="card"><div class="metric-label">02</div><div class="finding-title">Read results</div><p>Results load inside GamerIntegrity first, with a cleaner summary and timeline.</p></div>
             <div class="card"><div class="metric-label">03</div><div class="finding-title">Pick a view</div><p>Redacted is for sharing. Non-Redacted is the full local view.</p></div>
-            <div class="card"><div class="metric-label">04</div><div class="finding-title">Export if needed</div><p>Files are created only when someone exports a report.</p></div>
+            <div class="card"><div class="metric-label">04</div><div class="finding-title">Export if needed</div><p>Reports export as HTML, JSON, and an integrity file so reviewers can read and verify them later.</p></div>
+          </div>
+        </section>
+
+        <section id="whats-new" class="wiki-section doc-section" data-keywords="v1.0.4 update whats new report search browser timestamps direct cheat terms scan limitations integrity anti cheat review context">
+          <h2>What’s new in v1.0.4</h2>
+          <div class="notice"><strong>Cleaner reports, better browser evidence, less noise.</strong> v1.0.4 makes GamerIntegrity easier for players, staff, and reviewers to read without turning normal review pages into scary detections.</div>
+          <div class="grid detection-grid">
+            <div class="card"><div class="metric-label">Report</div><div class="finding-title">Searchable wiki layout</div><p>Reports are easier to navigate, with a sidebar, cleaner sections, a stronger summary, and report-wide search.</p></div>
+            <div class="card"><div class="metric-label">Browser</div><div class="finding-title">Better visit and download times</div><p>Browser rows use browser visit/download records when available instead of rough file-modified times.</p></div>
+            <div class="card"><div class="metric-label">Cheat terms</div><div class="finding-title">Direct wording is clearer</div><p>Terms like aimbot, ESP, triggerbot, injector, mapper, kdmapper, spoofer, and cheat are labeled more clearly.</p></div>
+            <div class="card"><div class="metric-label">Fair review</div><div class="finding-title">Less normal-page noise</div><p>Anti-cheat pages, GamerIntegrity pages, report pages, docs, and review content are kept low/context-needed unless stronger evidence exists.</p></div>
+            <div class="card"><div class="metric-label">Coverage</div><div class="finding-title">Scan limitations</div><p>The report now shows failed or skipped reads so reviewers know what could and could not be checked.</p></div>
+            <div class="card"><div class="metric-label">Preserve</div><div class="finding-title">Integrity files</div><p>The integrity manifest helps verify the exported HTML and JSON reports were not changed after export.</p></div>
           </div>
         </section>
 
@@ -146,11 +161,11 @@
           <p>GamerIntegrity looks for local traces that can help staff understand what happened on a PC.</p>
           <div class="grid detection-grid">
             <div class="card"><div class="metric-label">Launch</div><div class="finding-title">Was something run?</div><p>Looks for traces of loaders, injectors, mappers, spoofers, and other suspicious tools being opened.</p></div>
-            <div class="card"><div class="metric-label">Downloads</div><div class="finding-title">What was searched or downloaded?</div><p>Checks browser and download clues tied to cheat sites, bypasses, source pages, and tools.</p></div>
+            <div class="card"><div class="metric-label">Downloads</div><div class="finding-title">What was searched or downloaded?</div><p>Checks browser visit and download records tied to cheat sites, cheat terms, local paths, source pages, and tools.</p></div>
             <div class="card"><div class="metric-label">Projects</div><div class="finding-title">Source and builds</div><p>Looks for cheat projects, pasted sources, offsets, SDKs, and build folders.</p></div>
             <div class="card"><div class="metric-label">Startup</div><div class="finding-title">What starts with Windows?</div><p>Checks running apps, services, drivers, scheduled tasks, and startup entries.</p></div>
-            <div class="card"><div class="metric-label">Files</div><div class="finding-title">Names and folders</div><p>Looks for local file and folder names tied to cheat tools or cheat projects.</p></div>
-            <div class="card"><div class="metric-label">Context</div><div class="finding-title">USB, browser, hardware</div><p>Shows extra context that can help explain movement, timing, or the PC being checked.</p></div>
+            <div class="card"><div class="metric-label">Files</div><div class="finding-title">Names and folders</div><p>Looks for local file and folder names tied to direct cheat terms, cheat tools, or cheat projects.</p></div>
+            <div class="card"><div class="metric-label">Context</div><div class="finding-title">USB, limitations, browser, hardware</div><p>Shows extra context that can help explain movement, timing, failed reads, or the PC being checked.</p></div>
           </div>
         </section>
 
@@ -187,7 +202,7 @@
             <span>Cheat source projects</span>
             <span>Offsets / SDK dumps</span>
             <span>Pasted cheat bases</span>
-            <span>Cheat forums / providers</span>
+            <span>Cheat sites / domains / providers</span>
           </div>
 
           <h3>Areas checked for these cheat types</h3>
@@ -196,11 +211,11 @@
             <li><strong>Direct launch traces</strong> — Prefetch and app-history style evidence for tools that were run.</li>
             <li><strong>Recent app activity</strong> — UserAssist and BAM/DAM history that can show tools opened through Explorer or retained by Windows.</li>
             <li><strong>Retained history</strong> — Jump Lists, Recent Items, ShellBags, Run box history, RecentDocs, and Open/Save dialog history.</li>
-            <li><strong>Downloads</strong> — browser and download records tied to cheat sites, providers, tools, source links, or bypass searches.</li>
+            <li><strong>Downloads</strong> — browser visit/download records tied to cheat sites, providers, tools, local paths, source links, or cheat wording.</li>
             <li><strong>Startup items</strong> — running processes, services, drivers, tasks, and startup entries.</li>
             <li><strong>Projects</strong> — source folders, pasted bases, offsets, SDK dumps, build outputs, and cheat-tool projects.</li>
             <li><strong>Files / folders</strong> — names and paths that match known cheat terms, tools, providers, or suspicious project layouts.</li>
-            <li><strong>Browser history</strong> — Chrome, Edge, Brave, Opera, Vivaldi, Firefox, cheat forums, provider domains, bypass searches, game-specific cheat terms, and download pages.</li>
+            <li><strong>Browser history</strong> — Chrome, Edge, Brave, Firefox, cheat sites/domains, provider domains, direct cheat terms, game-specific cheat terms, and download pages.</li>
             <li><strong>Security history</strong> — Windows Defender history, selected event logs, and cleanup/missing-trace hints when available.</li>
             <li><strong>SRUM activity</strong> — extra app-activity context when Windows exposes useful app/path data.</li>
             <li><strong>External devices</strong> — USB and external device history that may help explain timing or device swapping.</li>
@@ -217,11 +232,22 @@
           </div>
         </section>
 
+        <section id="report-files" class="wiki-section doc-section" data-keywords="report files html json integrity manifest sha256 preserve share redacted non redacted">
+          <h2>Report files</h2>
+          <p>When a report is exported, keep the report files together so the review can be read and verified later.</p>
+          <div class="grid detection-grid">
+            <div class="card"><div class="metric-label">HTML</div><div class="finding-title"><code>GamerIntegrity_Report.html</code></div><p>The easiest file for players and staff to read. This is the searchable report page.</p></div>
+            <div class="card"><div class="metric-label">JSON</div><div class="finding-title"><code>GamerIntegrity_Report.json</code></div><p>The structured report data for preservation, future tooling, and deeper review.</p></div>
+            <div class="card"><div class="metric-label">Integrity</div><div class="finding-title"><code>GamerIntegrity_Report_Integrity.json</code></div><p>Contains the report hashes so reviewers can check whether the HTML or JSON changed after export.</p></div>
+          </div>
+          <div class="notice warning"><strong>Best practice:</strong> share the redacted HTML for normal review, but preserve the HTML, JSON, and integrity manifest together.</div>
+        </section>
+
         <section id="fair-play" class="wiki-section doc-section" data-keywords="fair play false positives appeal staff decision not instant ban gamer community">
           <h2>Fair play</h2>
-          <div class="notice"><strong>GamerIntegrity is not an instant ban button.</strong> It helps show what was found on a PC so staff can make a better call.</div>
+          <div class="notice"><strong>GamerIntegrity is not an instant ban button.</strong> It helps show what was found on a PC so staff can make a better call. Strong decisions should come from chains of evidence, not one weak row.</div>
           <ul class="bullet-list">
-            <li>Old downloads, dev tools, browser history, or test folders can show up in a scan.</li>
+            <li>Old downloads, dev tools, browser history, report pages, or test folders can show up in a scan.</li>
             <li>Some tools are dual-use and need context.</li>
             <li>Strong results usually have multiple traces pointing the same way.</li>
             <li>Each community should follow its own rules and appeal process.</li>
@@ -238,15 +264,17 @@
           </div>
         </section>
 
-        <section id="limits" class="wiki-section doc-section" data-keywords="limits known limitations clean traces missing false positives browser timestamps hardware spoofing version 1.0.2">
+        <section id="limits" class="wiki-section doc-section" data-keywords="limits known limitations clean traces missing false positives browser timestamps hardware spoofing version 1.0.4 scan limitations failed reads bypass context needed">
           <h2>Good to know</h2>
-          <div class="notice"><strong>v1.0.2 update:</strong> The scanner now uses clearer wording for direct launches, recent app activity, and retained history. It also suppresses more normal Windows, app-store, Defender, and framework noise so everyday players and staff see fewer confusing hits.</div>
+          <div class="notice"><strong>v1.0.4 update:</strong> Reports now have a cleaner wiki-style layout, search, scan limitations, better browser visit/download timestamps, direct cheat-term labels, and better protection for anti-cheat or review pages.</div>
           <ul class="bullet-list">
             <li>A scan shows traces. Staff still need context.</li>
             <li>Some traces can be missing, cleaned, disabled, or unavailable.</li>
-            <li>Browser timestamps can be messy.</li>
+            <li>Browser timestamps now use browser visit/download records when available, but reviewers should still check timeline context.</li>
             <li>Hardware spoofing cannot be proven from one scan without a trusted older baseline.</li>
             <li>Names-only matches do not prove file contents.</li>
+            <li>Standalone words like bypass can appear in normal content, so they need cheat or anti-cheat-evasion context before they become stronger evidence.</li>
+            <li>The scan limitations section shows failed or skipped reads so reviewers understand coverage.</li>
             <li>Redacted is the safer report view for sharing.</li>
           </ul>
         </section>
@@ -269,8 +297,8 @@
           <details><summary>Does it need an account?</summary><p>No. GamerIntegrity is non-gate kept and does not require a login to run a check.</p></details>
           <details><summary>Why does it ask for admin?</summary><p>Some Windows traces need admin access. The app shows Restart as Admin when needed.</p></details>
           <details><summary>Does it open the browser after every scan?</summary><p>No. Results load inside GamerIntegrity first. Files are only created when exported.</p></details>
-          <details><summary>Which report should I share?</summary><p>Use Redacted for sharing. Use Non-Redacted only for a trusted local check.</p></details>
-          <details><summary>Does a Critical result automatically prove cheating?</summary><p>No. It means strong traces were found. Staff should check the categories, timeline, and context before making a decision.</p></details>
+          <details><summary>Which report should I share?</summary><p>Use Redacted for sharing. Use Non-Redacted only for a trusted local check. Keep the HTML, JSON, and integrity file together when a report needs to be reviewed or preserved.</p></details>
+          <details><summary>Does a Critical result automatically prove cheating?</summary><p>No. It means strong traces were found. Staff should check the categories, timeline, direct launches, downloads, local files, and context before making a decision.</p></details>
           <details><summary>Can normal tools be flagged?</summary><p>Yes. Some developer, debugging, or reverse-engineering tools can be legitimate. Treat those as context unless stronger cheat-related traces are also present.</p></details>
           <details><summary>Why do I see a Windows SmartScreen warning?</summary><p>New or unsigned community apps can trigger SmartScreen. Download only from the official GitHub release page.</p></details>
           <details><summary>Can someone delete traces before a scan?</summary><p>Some traces can be missing or cleaned. That is why staff should review the full picture instead of one field.</p></details>

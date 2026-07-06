@@ -1,2 +1,2 @@
 # gamerintegrity.github.io
-The ultimate PC checker tool to check if someone has cheated or is cheating.
+GamerIntegrity is a free offline Windows PC checker for gamers, server staff, and tournament communities. The site explains how to download it, what it checks, how redacted reports work, what changed in v1.0.4, and why the HTML, JSON, and integrity files should be preserved together.
